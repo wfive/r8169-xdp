@@ -7866,8 +7866,6 @@ static int rtl_xdp_xmit(struct net_device *dev, struct xdp_buff *xdp)
     if(unlikely(!running))  
         return -ENETDOWN;
 
-    //printk(KERN_DEBUG"R8169 do xdp redirect:%d",112233);
-
     err = __rtl_xdp_xmit(dev,xdp);
     if (err != R8169_XDP_TX)
         return -ENOSPC;
